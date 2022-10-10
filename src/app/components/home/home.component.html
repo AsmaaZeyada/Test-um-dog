@@ -1,0 +1,62 @@
+<div class="body">
+  <div class="header">
+    <h1><i class="bi bi-plus-circle"></i> CutyDogs</h1>
+    <div class="lado-direito">
+      <i class="bi bi-heart"></i>
+      <i class="bi bi-send"></i>
+    </div>
+  </div>
+
+  <hr size="3" width="100%" color="#EEEEE" style="margin: 0%" class="mt-2" />
+  <div class="container">
+    <div class="story-container">
+      <div class="content" *ngFor="let item of images">
+        <div class="img-container">
+          <img [src]="item.img" alt="" />
+        </div>
+        <div class="text-container">
+          {{ item.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr size="3" width="100%" color="#EEEEE" style="margin: 0%" />
+
+  <div class="imagens col mt-2" *ngIf="showHome">
+    <app-home-home></app-home-home>
+  </div>
+  <div class="imagens col mt-2" *ngIf="!showHome">
+    <app-cadastro></app-cadastro>
+  </div>
+
+  <div class="footer" id="rodape">
+    <hr size="3" width="100%" color="#EEEEE" style="margin: 0%" />
+    <ul
+      class="nav nav-tabs nav-feed justify-content-center"
+      id="myTab"
+      role="tablist"
+    >
+      <li class="nav-item">
+        <button
+          class="nav-link nav-link-1"
+          id="home-tab"
+          data-toggle="tab"
+          (click)="acessaHome()"
+          
+          role="tab"
+          ><i class="bi bi-house-fill"></i> Home</button
+        >
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link active nav-link-2"
+          id="profile-tab"
+          data-toggle="tab"
+          (click)="acessaCadastro()"
+          role="tab"
+          ><i class="bi bi-person-circle"></i> Cadastro</button
+        >
+      </li>
+    </ul>
+  </div>
+</div>
